@@ -12,7 +12,7 @@ function App() {
   const numberClick =  (number) => {
     
     let tempTotal = runningTotal;
-    
+
     if ( runningTotal === 0 || newTotal){
       setPreviousTotal(runningTotal)
       tempTotal = 0
@@ -82,8 +82,12 @@ function App() {
   }
 
   const divide = (number) => {
-    setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
-  }
+    if(number === 0) {
+      setRunningTotal('do not divide by zero');
+    } else {
+      setRunningTotal(parseFloat(previousTotal) / parseFloat(number));
+    }
+   }
 
 
   return (
