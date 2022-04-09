@@ -56,5 +56,13 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '123210')
   })
 
-  
+  it('should return no divide by zero when attempting to divide by zero'), () => {
+    cy.get('#number5').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', 'do not divide by zero')
+  }
+
+
 })
