@@ -76,4 +76,13 @@ describe('Calculator', () => {
     expect(runningTotal.text()).toEqual('1')
   })
 
+  it('should do not divide by zero when attempting to divide by zero', () => {
+    const runningTotal = container.find('#running-total');
+    const button5 = container.find('#number5').simulate('click');
+    const divide = container.find('#operator-divide').simulate('click');
+    const button0 = container.find('#number0').simulate('click');
+    const equal = container.find('#operator-equals').simulate('click');
+    expect(runningTotal.text()).toEqual('do not divide by zero')
+  })
+
 })
